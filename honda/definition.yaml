@@ -4,15 +4,82 @@ _start_: "\x30{identifier}{control_type}\x00\x00\x00\x00\x00"
 # 0x20 = KWP2000 stop diagnostic session
 _stop_: "\x20"
 
-right_turn_signal:
-  _address_: 0x16F118F0
-  identifier: "\x0b"
-  control_type: "\x0f"
-left_turn_signal:
+# lights
+leftTurnSignal:
   _address_: 0x16F118F0
   identifier: "\x0a"
   control_type: "\x0f"
-hazard_lights:
+rightTurnSignal:
+  _address_: 0x16F118F0
+  identifier: "\x0b"
+  control_type: "\x0f"
+hazardLights:
   _address_: 0x16F118F0
   identifier: "\x08"
   control_type: "\x0f"
+parkingLights:
+  _address_: 0x16F118F0
+  identifier: "\x25"
+  control_type: "\x0f"
+headlightLowBeams:
+  _address_: 0x16F118F0
+  identifier: "\x1c"
+  control_type: "\x0f"
+headlightHighBeams:
+  _address_: 0x16F118F0
+  identifier: "\x1d"
+  control_type: "\x0f"
+frontFogLights:
+  _address_: 0x16F118F0
+  identifier: "\x20"
+  control_type: "\x0f"
+daytimeRunningLights:
+  _address_: 0x16F118F0
+  identifier: "\x36"
+  control_type: "\x0f"
+
+# locks/doors
+lockAllDoors:
+  _address_: 0x16F118F0
+  identifier: "\x04"
+  control_type: "\x01"
+unlockAllDoors:
+  _address_: 0x16F118F0
+  identifier: "\x05"
+  control_type: "\x01"
+unlockAllDoorsAlt:
+  _address_: 0x16F118F0
+  identifier: "\x06"
+  control_type: "\x01"
+trunkRelease:
+  _address_: 0x16F118F0
+  identifier: "\x09"
+  control_type: "\x01"
+
+# wipers
+frontWipersSlow:
+  _address_: 0x16F118F0
+  identifier: "\x19"
+  control_type: "\x05"
+frontWipersFast:
+  _address_: 0x16F118F0
+  identifier: "\x1a"
+  control_type: "\x05"
+frontWasherPump:
+  _address_: 0x16F118F0
+  identifier: "\x1b"
+  control_type: "\x05"
+rearWiper:
+  _address_: 0x16F118F0
+  identifier: "\x0d"
+  control_type: "\x05"
+rearWasherPump:
+  _address_: 0x16F118F0
+  identifier: "\x0e"
+  control_type: "\x05"
+
+# blind spot information
+leftBlindSpotIndicator:
+  _address_: 0x16F19FF0
+  identifier: "\x01"
+  control_type: "\x08"
