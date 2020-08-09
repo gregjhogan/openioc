@@ -1,0 +1,18 @@
+---
+# 0x30 = KWP2000 input/output control by local identifier
+_start_: "\x30{identifier}{control_type}\x00\x00\x00\x00\x00"
+# 0x20 = KWP2000 stop diagnostic session
+_stop_: "\x20"
+
+rightTurnSignal:
+  _address_: 0x16F118F0
+  identifier: "\x0b"
+  control_type: "\x0f"
+leftTurnSignal:
+  _address_: 0x16F118F0
+  identifier: "\x0a"
+  control_type: "\x0f"
+hazardLights:
+  _address_: 0x16F118F0
+  identifier: "\x08"
+  control_type: "\x0f"
