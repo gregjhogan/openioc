@@ -41,18 +41,22 @@ daytime_running_lights:
 # locks/doors
 lock_all_doors:
   _address_: 0x16F118F0
+  _instant_: true
   identifier: "\x04"
   control_type: "\x01"
 unlock_all_doors:
   _address_: 0x16F118F0
+  _instant_: true
   identifier: "\x05"
   control_type: "\x01"
 unlock_all_doors_alt:
   _address_: 0x16F118F0
+  _instant_: true
   identifier: "\x06"
   control_type: "\x01"
 trunk_release:
   _address_: 0x16F118F0
+  _instant_: true
   identifier: "\x09"
   control_type: "\x01"
 

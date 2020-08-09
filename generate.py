@@ -30,7 +30,13 @@ class {p.capitalize()}InputOutputController:
 
     start_exp = re.sub(r"(.{2})", r"\\x\1", start.format(**v).encode().hex())
     stop_exp = re.sub(r"(.{2})", r"\\x\1", stop.format(**v).encode().hex())
-    class_def += f"""
+    if "_instant_" in v.keys():
+      class_def += f"""
+  def {k}(self):
+    self.send({hex(v['_address_'])}, b"{start_exp}")
+"""
+    else:
+      class_def += f"""
   def {k}(self, on):
     if on:
       msg = b"{start_exp}"
@@ -39,5 +45,5 @@ class {p.capitalize()}InputOutputController:
     self.send({hex(v['_address_'])}, msg)
 """
 
-  with open(os.path.join(def_path, "lib.py"), "w") as o:
+  with open(os.path.join(def_path, "__init__.py"), "w") as o:
     o.write(class_def)
