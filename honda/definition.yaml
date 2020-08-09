@@ -5,81 +5,81 @@ _start_: "\x30{identifier}{control_type}\x00\x00\x00\x00\x00"
 _stop_: "\x20"
 
 # lights
-leftTurnSignal:
+left_turn_signal:
   _address_: 0x16F118F0
   identifier: "\x0a"
   control_type: "\x0f"
-rightTurnSignal:
+right_turn_signal:
   _address_: 0x16F118F0
   identifier: "\x0b"
   control_type: "\x0f"
-hazardLights:
+hazard_lights:
   _address_: 0x16F118F0
   identifier: "\x08"
   control_type: "\x0f"
-parkingLights:
+parking_lights:
   _address_: 0x16F118F0
   identifier: "\x25"
   control_type: "\x0f"
-headlightLowBeams:
+headlight_low_beams:
   _address_: 0x16F118F0
   identifier: "\x1c"
   control_type: "\x0f"
-headlightHighBeams:
+headlight_high_beams:
   _address_: 0x16F118F0
   identifier: "\x1d"
   control_type: "\x0f"
-frontFogLights:
+front_fog_lights:
   _address_: 0x16F118F0
   identifier: "\x20"
   control_type: "\x0f"
-daytimeRunningLights:
+daytime_running_lights:
   _address_: 0x16F118F0
   identifier: "\x36"
   control_type: "\x0f"
 
 # locks/doors
-lockAllDoors:
+lock_all_doors:
   _address_: 0x16F118F0
   identifier: "\x04"
   control_type: "\x01"
-unlockAllDoors:
+unlock_all_doors:
   _address_: 0x16F118F0
   identifier: "\x05"
   control_type: "\x01"
-unlockAllDoorsAlt:
+unlock_all_doors_alt:
   _address_: 0x16F118F0
   identifier: "\x06"
   control_type: "\x01"
-trunkRelease:
+trunk_release:
   _address_: 0x16F118F0
   identifier: "\x09"
   control_type: "\x01"
 
 # wipers
-frontWipersSlow:
+front_wipers_slow:
   _address_: 0x16F118F0
   identifier: "\x19"
   control_type: "\x05"
-frontWipersFast:
+front_wipers_fast:
   _address_: 0x16F118F0
   identifier: "\x1a"
   control_type: "\x05"
-frontWasherPump:
+front_washer_pump:
   _address_: 0x16F118F0
   identifier: "\x1b"
   control_type: "\x05"
-rearWiper:
+rear_wiper:
   _address_: 0x16F118F0
   identifier: "\x0d"
   control_type: "\x05"
-rearWasherPump:
+rear_washer_pump:
   _address_: 0x16F118F0
   identifier: "\x0e"
   control_type: "\x05"
 
 # blind spot information
-leftBlindSpotIndicator:
+left_blind_spot_indicator:
   _address_: 0x16F19FF0
   identifier: "\x01"
   control_type: "\x08"
