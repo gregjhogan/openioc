@@ -122,9 +122,16 @@ class HondaInputOutputController:
       msg = b"\x20"
     self.send(0x16f118f0, msg)
 
-  def left_blind_spot_indicator(self, on):
+  def left_blindspot_flash(self, on):
     if on:
       msg = b"\x30\x01\x08\x00\x00\x00\x00\x00"
     else:
       msg = b"\x20"
     self.send(0x16f19ff0, msg)
+
+  def right_blindspot_flash(self, on):
+    if on:
+      msg = b"\x30\x01\x08\x00\x00\x00\x00\x00"
+    else:
+      msg = b"\x20"
+    self.send(0x16f1a7f0, msg)

@@ -79,7 +79,11 @@ rear_washer_pump:
   control_type: "\x05"
 
 # blind spot information
-left_blind_spot_indicator:
+left_blindspot_flash:
   _address_: 0x16F19FF0
+  identifier: "\x01"
+  control_type: "\x08"
+right_blindspot_flash:
+  _address_: 0x16F1A7F0
   identifier: "\x01"
   control_type: "\x08"
