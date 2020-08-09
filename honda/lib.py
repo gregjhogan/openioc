@@ -3,128 +3,135 @@ class HondaInputOutputController:
   def __init__(self, send_func):
     self.send = send_func
 
-  def leftTurnSignal(self, on):
+  def left_turn_signal(self, on):
     if on:
       msg = b"\x30\x0a\x0f\x00\x00\x00\x00\x00"
     else:
       msg = b"\x20"
     self.send(0x16f118f0, msg)
 
-  def rightTurnSignal(self, on):
+  def right_turn_signal(self, on):
     if on:
       msg = b"\x30\x0b\x0f\x00\x00\x00\x00\x00"
     else:
       msg = b"\x20"
     self.send(0x16f118f0, msg)
 
-  def hazardLights(self, on):
+  def hazard_lights(self, on):
     if on:
       msg = b"\x30\x08\x0f\x00\x00\x00\x00\x00"
     else:
       msg = b"\x20"
     self.send(0x16f118f0, msg)
 
-  def parkingLights(self, on):
+  def parking_lights(self, on):
     if on:
       msg = b"\x30\x25\x0f\x00\x00\x00\x00\x00"
     else:
       msg = b"\x20"
     self.send(0x16f118f0, msg)
 
-  def headlightLowBeams(self, on):
+  def headlight_low_beams(self, on):
     if on:
       msg = b"\x30\x1c\x0f\x00\x00\x00\x00\x00"
     else:
       msg = b"\x20"
     self.send(0x16f118f0, msg)
 
-  def headlightHighBeams(self, on):
+  def headlight_high_beams(self, on):
     if on:
       msg = b"\x30\x1d\x0f\x00\x00\x00\x00\x00"
     else:
       msg = b"\x20"
     self.send(0x16f118f0, msg)
 
-  def frontFogLights(self, on):
+  def front_fog_lights(self, on):
     if on:
       msg = b"\x30\x20\x0f\x00\x00\x00\x00\x00"
     else:
       msg = b"\x20"
     self.send(0x16f118f0, msg)
 
-  def daytimeRunningLights(self, on):
+  def daytime_running_lights(self, on):
     if on:
       msg = b"\x30\x36\x0f\x00\x00\x00\x00\x00"
     else:
       msg = b"\x20"
     self.send(0x16f118f0, msg)
 
-  def lockAllDoors(self, on):
+  def lock_all_doors(self, on):
     if on:
       msg = b"\x30\x04\x01\x00\x00\x00\x00\x00"
     else:
       msg = b"\x20"
     self.send(0x16f118f0, msg)
 
-  def unlockAllDoors(self, on):
+  def unlock_all_doors(self, on):
     if on:
       msg = b"\x30\x05\x01\x00\x00\x00\x00\x00"
     else:
       msg = b"\x20"
     self.send(0x16f118f0, msg)
 
-  def unlockAllDoorsAlt(self, on):
+  def unlock_all_doors_alt(self, on):
     if on:
       msg = b"\x30\x06\x01\x00\x00\x00\x00\x00"
     else:
       msg = b"\x20"
     self.send(0x16f118f0, msg)
 
-  def trunkRelease(self, on):
+  def trunk_release(self, on):
     if on:
       msg = b"\x30\x09\x01\x00\x00\x00\x00\x00"
     else:
       msg = b"\x20"
     self.send(0x16f118f0, msg)
 
-  def frontWipersSlow(self, on):
+  def front_wipers_slow(self, on):
     if on:
       msg = b"\x30\x19\x05\x00\x00\x00\x00\x00"
     else:
       msg = b"\x20"
     self.send(0x16f118f0, msg)
 
-  def frontWipersFast(self, on):
+  def front_wipers_fast(self, on):
     if on:
       msg = b"\x30\x1a\x05\x00\x00\x00\x00\x00"
     else:
       msg = b"\x20"
     self.send(0x16f118f0, msg)
 
-  def frontWasherPump(self, on):
+  def front_washer_pump(self, on):
     if on:
       msg = b"\x30\x1b\x05\x00\x00\x00\x00\x00"
     else:
       msg = b"\x20"
     self.send(0x16f118f0, msg)
 
-  def rearWiper(self, on):
+  def rear_wiper(self, on):
     if on:
       msg = b"\x30\x0d\x05\x00\x00\x00\x00\x00"
     else:
       msg = b"\x20"
     self.send(0x16f118f0, msg)
 
-  def rearWasherPump(self, on):
+  def rear_washer_pump(self, on):
     if on:
       msg = b"\x30\x0e\x05\x00\x00\x00\x00\x00"
     else:
       msg = b"\x20"
     self.send(0x16f118f0, msg)
 
-  def leftBlindSpotIndicator(self, on):
+  def left_blindspot_flash(self, on):
     if on:
       msg = b"\x30\x01\x08\x00\x00\x00\x00\x00"
     else:
       msg = b"\x20"
     self.send(0x16f19ff0, msg)
+
+  def right_blindspot_flash(self, on):
+    if on:
+      msg = b"\x30\x01\x08\x00\x00\x00\x00\x00"
+    else:
+      msg = b"\x20"
+    self.send(0x16f1a7f0, msg)
