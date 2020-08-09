@@ -6,15 +6,17 @@ import re
 import yaml
 
 script_path = os.path.dirname(os.path.abspath(__file__))
-def_path = os.path.join(script_path, "definitions")
-for fn in os.listdir(def_path):
-  print(f"processing {fn} ...")
-  with open(os.path.join(def_path, fn)) as f:
+for p in os.listdir(script_path):
+  def_path = os.path.join(script_path, p)
+  if p[0] == "." or not os.path.isdir(p):
+    continue
+
+  print(f"processing {p} ...")
+  with open(os.path.join(def_path, "definition.yaml")) as f:
     y = yaml.safe_load(f)
 
-  bn = os.path.splitext(fn)[0]
   class_def = f"""
-class {bn.capitalize()}InputOutputController:
+class {p.capitalize()}InputOutputController:
   def __init__(self, send_func):
     self.send = send_func
 """
@@ -37,5 +39,5 @@ class {bn.capitalize()}InputOutputController:
     self.send({hex(v['_address_'])}, msg)
 """
 
-  with open(os.path.join(script_path, f"{bn}.py"), "w") as o:
+  with open(os.path.join(def_path, "lib.py"), "w") as o:
     o.write(class_def)

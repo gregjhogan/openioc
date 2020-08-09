@@ -4,15 +4,15 @@ _start_: "\x30{identifier}{control_type}\x00\x00\x00\x00\x00"
 # 0x20 = KWP2000 stop diagnostic session
 _stop_: "\x20"
 
-rightTurnSignal:
+right_turn_signal:
   _address_: 0x16F118F0
   identifier: "\x0b"
   control_type: "\x0f"
-leftTurnSignal:
+left_turn_signal:
   _address_: 0x16F118F0
   identifier: "\x0a"
   control_type: "\x0f"
-hazardLights:
+hazard_lights:
   _address_: 0x16F118F0
   identifier: "\x08"
   control_type: "\x0f"
