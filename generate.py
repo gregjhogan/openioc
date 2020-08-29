@@ -28,8 +28,8 @@ class {p.capitalize()}InputOutputController:
       continue
     print(f"- {k}")
 
-    start_exp = re.sub(r"(.{2})", r"\\x\1", start.format(**v).encode().hex())
-    stop_exp = re.sub(r"(.{2})", r"\\x\1", stop.format(**v).encode().hex())
+    start_exp = re.sub(r"(.{2})", r"\\x\1", start.format(**v).encode('charmap').hex())
+    stop_exp = re.sub(r"(.{2})", r"\\x\1", stop.format(**v).encode('charmap').hex())
     if "_instant_" in v.keys():
       class_def += f"""
   def {k}(self):
