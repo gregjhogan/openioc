@@ -1,0 +1,64 @@
+---
+# 0x2F = UDS input/output control by identifier
+_start_: "{length}\x2F{identifier}{start_type}{start_mask}"
+_stop_: "{length}\x2F{identifier}{stop_type}{stop_mask}"
+
+### B-CAN
+# wipers
+front_wipers_slow:
+  _address_: 0x700
+  identifier: "\xB0\x08"
+  control_type: "\x03"
+  control_state: ""
+  length: "\x04"
+front_wipers_fast:
+  _address_: 0x700
+  identifier: "\xB0\x09"
+  control_type: "\x03"
+  control_state: ""
+  length: "\x04"
+rear_wiper:
+  _address_: 0x700
+  identifier: "\xB0\x0A"
+  control_type: "\x03"
+  control_state: ""
+  length: "\x04"
+
+### C-CAN
+# surround view
+surround_view_rear_wide:
+  _address_: 0x793
+  identifier: "\xF0\x12"
+  control_type: "\x07"
+  control_state: "\xFF"
+  length: "\x05"
+surround_view_front_wide:
+  _address_: 0x793
+  identifier: "\xF0\x13"
+  control_type: "\x07"
+  control_state: "\xFF"
+  length: "\x05"
+surround_view_rear_above:
+  _address_: 0x793
+  identifier: "\xF0\x20"
+  control_type: "\x07"
+  control_state: "\xFF"
+  length: "\x05"
+surround_view_front_above:
+  _address_: 0x793
+  identifier: "\xF0\x21"
+  control_type: "\x07"
+  control_state: "\xFF"
+  length: "\x05"
+surround_view_rear_side:
+  _address_: 0x793
+  identifier: "\xF0\x24"
+  control_type: "\x07"
+  control_state: "\xFF"
+  length: "\x05"
+surround_view_front_side:
+  _address_: 0x793
+  identifier: "\xF0\x25"
+  control_type: "\x07"
+  control_state: "\xFF"
+  length: "\x05"
